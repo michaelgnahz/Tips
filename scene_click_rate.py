@@ -305,8 +305,8 @@ def render_report(metrics, detail=True):
         [
         "",
         "## 类型汇总",
-        "| 类型 | 点击数 | 点击会话数 | 全站会话点击率 | 主要来源场景 | 场景点击数 | 场景点击会话数 | 场景会话数 | 场景会话点击率(UV) | 场景会话点击率(PV) |",
-        "| --- | ---: | ---: | ---: | --- | ---: | ---: | ---: | ---: | ---: |",
+        "| 类型 | 点击数 | 点击会话数 | 主要来源场景 | 场景点击数 | 场景点击会话数 | 场景会话数 | 场景会话点击率(UV) | 场景会话点击率(PV) |",
+        "| --- | ---: | ---: | --- | ---: | ---: | ---: | ---: | ---: |",
         ]
     )
 
@@ -315,7 +315,7 @@ def render_report(metrics, detail=True):
         click_sessions = len(type_sessions[category])
         lines.append(
             f"| {clean(category)} | {type_clicks[category]:,} | {click_sessions:,} | "
-            f"{pct(click_sessions, len(all_sessions))} | {clean(main_stats['scene'])} | "
+            f"{clean(main_stats['scene'])} | "
             f"{main_stats['clicks']:,} | {main_stats['click_sessions']:,} | "
             f"{main_stats['total_sessions']:,} | {pct(main_stats['click_sessions'], main_stats['total_sessions'])} | "
             f"{pct(main_stats['pv_clicks'], main_stats['total_sessions'])} |"
